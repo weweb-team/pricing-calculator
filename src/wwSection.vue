@@ -44,10 +44,15 @@
                         {{ plan.prices[radio] }}
                     </div>
                 </div> -->
-                <div class="pricing-section__plans-plan-pricing" v-if="!isNaN(plan.prices[radio])">
+                <div
+                    class="pricing-section__plans-plan-pricing"
+                    v-if="!isNaN(plan.prices[radio])"
+                    style="justify-content: center"
+                >
                     <div
                         class="pricing-section__plans-plan-pricing-price"
                         :style="{ color: plan.priceStyle.color, 'font-size': `${plan.priceStyle.fontSize}px` }"
+                        style="margin-left: 0px"
                     >
                         {{ content.devise }}{{ plan.prices[radio] }}
                     </div>
@@ -55,7 +60,7 @@
                         class="layout pricing-section__plans-plan-pricing-duration"
                         :style="{ color: plan.priceStyle.color }"
                     >
-                        /{{ durationTexts[radio] }}
+                        / month
                     </div>
                 </div>
                 <wwLayout
