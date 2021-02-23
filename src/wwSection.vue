@@ -12,6 +12,7 @@
                         class="pricing-section__header-right-radio-selector -month"
                         :class="{ '-selected': !radio }"
                         @click="radio = 0"
+                        :style="{ color: content.mainColor }"
                     >
                         Monthly
                     </div>
@@ -19,6 +20,7 @@
                         class="pricing-section__header-right-radio-selector -year"
                         :class="{ '-selected': radio }"
                         @click="radio = 1"
+                        :style="{ color: content.mainColor }"
                     >
                         Yearly
                     </div>
