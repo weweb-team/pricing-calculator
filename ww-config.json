@@ -6,13 +6,6 @@
                 "label": { "en": "Main Color", "fr": "Couleur" },
                 "type": "Color"
             },
-            "scrollBarText": {
-                "label": { "en": "ScrollBar Text", "fr": "Texte sur Barre" },
-                "type": "Text",
-                "options": {
-                    "placeholder": "User"
-                }
-            },
             "devise": {
                 "label": { "en": "Devise", "fr": "Devise" },
                 "type": "Text",

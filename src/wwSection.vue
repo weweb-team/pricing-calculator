@@ -25,24 +25,6 @@
                 </div>
             </div>
         </div>
-        <div class="pricing-section__range">
-            <div class="pricing-section__range-preview">
-                <div
-                    class="pricing-section__range-preview-tooltip"
-                    :style="{ left: `${((userCount - 1) / (content.maxUserCount - 1)) * 100}%` }"
-                >
-                    {{ userCount }} {{ usersLabel }}
-                </div>
-            </div>
-            <input
-                class="pricing-section__range-input"
-                v-model="userCount"
-                type="range"
-                min="1"
-                :max="content.maxUserCount"
-                :style="{ '--ratio': `${(userCount / content.maxUserCount) * 100}%` }"
-            />
-        </div>
         <div class="pricing-section__plans">
             <div
                 class="pricing-section__plans-plan"
@@ -54,12 +36,20 @@
                     :path="`plans[${index}].planHeaderObjects`"
                     class="layout pricing-section__plans-plan-header -layout"
                 ></wwLayout>
-                <div class="pricing-section__plans-plan-pricing">
+                <!-- <div class="pricing-section__plans-plan-pricing" v-if="isNaN(plan.prices[radio])">
                     <div
                         class="pricing-section__plans-plan-pricing-price"
                         :style="{ color: plan.priceStyle.color, 'font-size': `${plan.priceStyle.fontSize}px` }"
                     >
-                        {{ content.devise }}{{ userCount * plan.prices[radio] }}
+                        {{ plan.prices[radio] }}
+                    </div>
+                </div> -->
+                <div class="pricing-section__plans-plan-pricing" v-if="!isNaN(plan.prices[radio])">
+                    <div
+                        class="pricing-section__plans-plan-pricing-price"
+                        :style="{ color: plan.priceStyle.color, 'font-size': `${plan.priceStyle.fontSize}px` }"
+                    >
+                        {{ content.devise }}{{ plan.prices[radio] }}
                     </div>
                     <div
                         class="layout pricing-section__plans-plan-pricing-duration"
@@ -122,7 +112,7 @@ export default {
                 planHeaderObjects: [],
                 planPricingObjects: [],
                 planMainObjects: [],
-                prices: [199, 1999],
+                prices: ['custom', 'custom'],
                 color: '#FFFFFF',
                 priceStyle: {
                     color: '#000000',
@@ -131,21 +121,13 @@ export default {
             },
         ],
         mainColor: '#5F30E2',
-        scrollBarText: 'User',
         devise: '$',
-        maxUserCount: 100,
     },
     data() {
         return {
             radio: 0,
-            userCount: 1,
             durationTexts: ['Month', 'Year'],
         };
-    },
-    computed: {
-        usersLabel() {
-            return `${this.content.scrollBarText}${this.userCount > 1 ? 's' : ''}`;
-        },
     },
     mounted() {},
 };
