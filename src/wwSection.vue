@@ -130,7 +130,7 @@ export default {
     },
     data() {
         return {
-            radio: 0,
+            radio: 1,
             durationTexts: ['Month', 'Year'],
         };
     },
