@@ -340,11 +340,11 @@ export default {
 
         .pricing-section__plans {
             flex-direction: column;
-            margin-bottom: 30px;
 
             &-plan {
                 width: calc(100% - 20px);
                 margin: auto;
+                margin-bottom: 30px;
                 box-shadow: 0px 4px 18px -8px #000000b0;
             }
         }
