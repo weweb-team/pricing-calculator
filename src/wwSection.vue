@@ -301,7 +301,7 @@ export default {
             width: 25%;
             border-radius: 20px;
             transition: all 0.3s ease;
-
+            
             &:hover {
                 box-shadow: 0px 4px 18px -8px #000000b0;
             }
@@ -335,12 +335,12 @@ export default {
     @media (max-width: 991px) {
         .pricing-section__header {
             flex-direction: column;
-            margin: 0 10px;
+            margin: 0 10px 30px 10px;
         }
 
         .pricing-section__plans {
             flex-direction: column;
-            row-gap: 30px;
+            margin-bottom: 30px;
 
             &-plan {
                 width: calc(100% - 20px);
