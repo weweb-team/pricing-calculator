@@ -27,9 +27,9 @@
         </div>
         <div class="pricing-section__plans">
             <div
-                class="pricing-section__plans-plan"
                 v-for="(plan, index) in content.plans"
                 :key="index"
+                class="pricing-section__plans-plan"
                 :style="{ 'background-color': plan.color }"
             >
                 <wwLayout
@@ -45,8 +45,8 @@
                     </div>
                 </div> -->
                 <div
-                    class="pricing-section__plans-plan-pricing"
                     v-if="!isNaN(plan.prices[radio])"
+                    class="pricing-section__plans-plan-pricing"
                     style="justify-content: center"
                 >
                     <div
@@ -75,7 +75,7 @@
 <script>
 export default {
     props: {
-        content: Object,
+        content: { type: Object, required: true },
     },
     wwDefaultContent: {
         headerObjects: [],
@@ -134,7 +134,6 @@ export default {
             durationTexts: ['Month', 'Year'],
         };
     },
-    mounted() {},
 };
 </script>
 
@@ -301,7 +300,7 @@ export default {
             width: 25%;
             border-radius: 20px;
             transition: all 0.3s ease;
-            
+
             &:hover {
                 box-shadow: 0px 4px 18px -8px #000000b0;
             }
