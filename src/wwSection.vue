@@ -77,63 +77,36 @@ export default {
     props: {
         content: { type: Object, required: true },
     },
-    wwDefaultContent: {
-        headerObjects: [],
-        plans: [
-            {
-                planHeaderObjects: [],
-                planPricingObjects: [],
-                planMainObjects: [],
-                prices: [19, 199],
-                color: '#FFFFFF',
-                priceStyle: {
-                    color: '#000000',
-                    fontSize: 30,
-                },
-            },
-            {
-                planHeaderObjects: [],
-                planPricingObjects: [],
-                planMainObjects: [],
-                prices: [39, 399],
-                color: '#FFFFFF',
-                priceStyle: {
-                    color: '#000000',
-                    fontSize: 30,
-                },
-            },
-            {
-                planHeaderObjects: [],
-                planPricingObjects: [],
-                planMainObjects: [],
-                prices: [99, 999],
-                color: '#5F30E2',
-                priceStyle: {
-                    color: '#000000',
-                    fontSize: 30,
-                },
-            },
-            {
-                planHeaderObjects: [],
-                planPricingObjects: [],
-                planMainObjects: [],
-                prices: ['custom', 'custom'],
-                color: '#FFFFFF',
-                priceStyle: {
-                    color: '#000000',
-                    fontSize: 30,
-                },
-            },
-        ],
-        mainColor: '#5F30E2',
-        devise: '$',
-    },
     data() {
         return {
             radio: 1,
-            durationTexts: ['Month', 'Year'],
         };
     },
+    computed: {
+        plans(){
+            const plans = [];
+
+            for(let i = 0 ; i < 4 ; i++){
+                plans.push({
+                    planHeaderObjects: this.content[`plan${index}HeaderObjects`],
+                    planPricingObjects: this.content[`plan${index}PricingObjects`],
+                    planMainObjects: this.content[`plan${index}MainObjects`],
+                    prices: [
+                        this.content[`plan${index}PriceMonth`],
+                        this.content[`plan${index}PriceYear`],
+                    ],
+                    priceStyle: {
+                        fontSize: this.content[`plan${index}FontSize`],
+                        color: this.content[`plan${index}Color`],
+                    },
+                    color:this.content[`plan${index}BackgroundColor`],
+                })
+            }
+
+            return plans;
+        }
+    
+    }
 };
 </script>
 
