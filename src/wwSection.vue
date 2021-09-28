@@ -88,17 +88,17 @@ export default {
 
             for(let i = 0 ; i < 4 ; i++){
                 plans.push({
-                    planHeaderObjects: this.content[`plan${index}HeaderObjects`],
-                    planMainObjects: this.content[`plan${index}MainObjects`],
+                    planHeaderObjects: this.content[`plan${i}HeaderObjects`],
+                    planMainObjects: this.content[`plan${i}MainObjects`],
                     prices: [
-                        this.content[`plan${index}PriceMonth`],
-                        this.content[`plan${index}PriceYear`],
+                        this.content[`plan${i}PriceMonth`],
+                        this.content[`plan${i}PriceYear`],
                     ],
                     priceStyle: {
-                        fontSize: this.content[`plan${index}FontSize`],
-                        color: this.content[`plan${index}Color`],
+                        fontSize: this.content[`plan${i}FontSize`],
+                        color: this.content[`plan${i}Color`],
                     },
-                    color:this.content[`plan${index}BackgroundColor`],
+                    color:this.content[`plan${i}BackgroundColor`],
                 })
             }
 
