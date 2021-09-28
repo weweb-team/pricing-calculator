@@ -27,13 +27,13 @@
         </div>
         <div class="pricing-section__plans">
             <div
-                v-for="(plan, index) in content.plans"
+                v-for="(plan, index) in plans"
                 :key="index"
                 class="pricing-section__plans-plan"
                 :style="{ 'background-color': plan.color }"
             >
                 <wwLayout
-                    :path="`plans[${index}].planHeaderObjects`"
+                    :path="`plan${index}HeaderObjects`"
                     class="layout pricing-section__plans-plan-header -layout"
                 ></wwLayout>
                 <!-- <div class="pricing-section__plans-plan-pricing" v-if="isNaN(plan.prices[radio])">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <wwLayout
-                    :path="`plans[${index}].planMainObjects`"
+                    :path="`plan${index}MainObjects`"
                     class="layout pricing-section__plans-plan-main -layout"
                 ></wwLayout>
             </div>
@@ -89,7 +89,6 @@ export default {
             for(let i = 0 ; i < 4 ; i++){
                 plans.push({
                     planHeaderObjects: this.content[`plan${index}HeaderObjects`],
-                    planPricingObjects: this.content[`plan${index}PricingObjects`],
                     planMainObjects: this.content[`plan${index}MainObjects`],
                     prices: [
                         this.content[`plan${index}PriceMonth`],

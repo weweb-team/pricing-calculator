@@ -4,10 +4,6 @@ function createPlan(index){
             hidden: true,
             defaultValue: []
         },
-        [`plan${index}PricingObjects`]:{
-            hidden: true,
-            defaultValue: []
-        },
         [`plan${index}MainObjects`]:{
             hidden: true,
             defaultValue: []
