@@ -48,13 +48,17 @@ export default {
         icon: 'fontawesome/solid/hand-holding-usd',
     },
     properties: {
-        "mainColor": {
+        headerObjects: {
+            hidden : true,
+            defaultValue: []
+        },
+        mainColor: {
             section: 'settings',
             "label": { "en": "Main Color", "fr": "Couleur" },
             "type": "Color",
             defaultValue: '#5F30E2'
         },
-        "devise": {
+        devise: {
             section: 'settings',
             "label": { "en": "Devise", "fr": "Devise" },
             "type": "Text",
