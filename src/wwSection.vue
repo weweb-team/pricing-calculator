@@ -117,7 +117,7 @@ export default {
                 planHeaderObjects: [],
                 planPricingObjects: [],
                 planMainObjects: [],
-                prices: ['custom', 'custom'],
+                prices: [99, 999],
                 color: '#FFFFFF',
                 priceStyle: {
                     color: '#000000',
